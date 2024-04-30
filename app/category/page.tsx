@@ -19,14 +19,14 @@ export default function Category() {
     fetchCategories();
   }, []);
 
-  const fetchProductsByCategory = async (category) => {
+  const fetchProductsByCategory = async (category : string) => {
     const res = await fetch(`https://fakestoreapi.com/products/category/${category}`);
     const productsData = await res.json();
     setProducts(productsData);
     setSelectedCategory(category);
   };
 
-  const handleCategoryClick = (category) => {
+  const handleCategoryClick = (category : string) => {
     fetchProductsByCategory(category);
   };
 
@@ -43,7 +43,8 @@ export default function Category() {
         </div>
         <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {products.map((product) => (
-            <Product key={product.id} product={product} />
+            <Product key={parseInt((product as any).id)} product={product} />
+
           ))}
         </div>
       </section>

@@ -13,7 +13,7 @@ const CartPage = () => {
   ]);
 
   // Function to update quantity
-  const updateQuantity = (productId, newQuantity) => {
+  const updateQuantity = (productId :number, newQuantity: number) => {
     const updatedCart = cart.map((item) =>
       item.id === productId ? { ...item, quantity: newQuantity } : item
     );
@@ -21,7 +21,7 @@ const CartPage = () => {
   };
 
   // Function to remove item from cart
-  const removeFromCart = (productId) => {
+  const removeFromCart = (productId :number) => {
     const updatedCart = cart.filter((item) => item.id !== productId);
     setCart(updatedCart);
   };
