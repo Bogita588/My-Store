@@ -45,7 +45,8 @@ function Modal() {
         {/* Container to center the panel */}
         <div className="flex min-h-full items-center justify-center p-4">
           {/* The actual dialog panel  */}
-          <Dialog.Panel className="mx-auto max-w-3xl rounded bg-white p-10">
+          <Dialog.Panel className="mx-auto
+           max-w-3xl rounded bg-white p-10">
             {loading ? (
               <div className="h-8 w-8 rounded-full border-2 border-dotted border-blue-600 animate-spin" />
             ) : (
@@ -98,8 +99,14 @@ function Modal() {
                   </div>
 
                   <div className="space-y-3 text-sm">
+                    <button  className="button w-full bg-blue-600 text-white border-transparent hover:border-blue-600 hover:bg-transparent hover:text-black">
+                      Add to cart
+                    </button>
                     <button className="button w-full bg-blue-600 text-white border-transparent hover:border-blue-600 hover:bg-transparent hover:text-black">
-                      Add to bag
+                      Update
+                    </button>
+                    <button className="button w-full bg-blue-600 text-white border-transparent hover:border-blue-600 hover:bg-transparent hover:text-black">
+                      Delete
                     </button>
                     <button
                       onClick={() => window.location.reload()}
